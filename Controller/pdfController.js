@@ -10,6 +10,11 @@ exports.generarPDf = async(req,res) =>{
         const nombreArchivo = 'reporte.pdf';
         const doc = new jsPDF();
 
+        const nombreSocio = socios[0].nombre; // Suponiendo que solo hay un socio
+        doc.setFontSize(20);
+        doc.text(nombreSocio, 20, 20);
+
+
         //tabla usuarios
         doc.setFontSize(15);   
         doc.autoTable({
